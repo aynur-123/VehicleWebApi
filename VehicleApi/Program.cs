@@ -5,10 +5,10 @@ using VehicleApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<VehicleDbContext>(opt => opt.UseInMemoryDatabase("vehicleDatabase"));
@@ -17,7 +17,7 @@ builder.Services.AddScoped<IVehicleService, VehicleService>();
 var app = builder.Build();
 AddVehicleData(app);
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -70,7 +70,7 @@ static void AddVehicleData(WebApplication app)
         Width = 5
     };
 
-    // buradan yeni kayýt ekleyebilirsiniz
+
 
     db.Cars.Add(car);
     db.Cars.Add(carTwo);
